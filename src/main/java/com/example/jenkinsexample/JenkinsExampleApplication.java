@@ -1,8 +1,13 @@
 package com.example.jenkinsexample;
 
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
 public class JenkinsExampleApplication {
     public static void main(String[] args) {
-        System.out.println("Hello, Jenkins and CI/CD!");
+        SpringApplication.run(JenkinsExampleApplication.class, args);
     }
 }
+
 

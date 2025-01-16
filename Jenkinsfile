@@ -5,21 +5,21 @@ pipeline {
         stage('Clone Repository') {
             steps {
                 echo 'Cloning repository from GitHub...'
-                git url: 'https://github.com/AVA030215/Jenkins-example.git', branch: 'main'
+                git credentialsId: 'GitHub-Credential', url: 'https://github.com/AVA030215/Jenkins-example.git', branch: 'main'
             }
         }
 
         stage('Build') {
             steps {
                 echo 'Building the project...'
-                sh './gradlew build'
+                bat './gradlew.bat build'  // Windows 환경에서는 gradlew.bat 사용
             }
         }
 
         stage('Test') {
             steps {
                 echo 'Running tests...'
-                sh './gradlew test'
+                bat './gradlew.bat test'  // Windows 환경에서는 gradlew.bat 사용
             }
         }
 
